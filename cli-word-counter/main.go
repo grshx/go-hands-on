@@ -39,13 +39,26 @@ func main() {
 		return
 	}
 
-	wordCount := 0
+	var countByWords = make(map[string]int)
+
 	for _, word := range strings.Split(text, " ") {
 		if strings.TrimSpace(word) == "" {
 			continue
 		}
-		wordCount++
+
+		if _, ok := countByWords[word]; ok {
+			countByWords[word]++
+		} else {
+			countByWords[word] = 1
+		}
+
 	}
 
-	fmt.Println("total word count : ", wordCount)
+	totalWordCount := 0
+	for word, count := range countByWords {
+		totalWordCount += count
+		fmt.Printf("%s : %d\n", word, count)
+	}
+
+	fmt.Println("total words count : ", totalWordCount)
 }
