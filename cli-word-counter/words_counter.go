@@ -1,4 +1,4 @@
-package main
+package words_counter
 
 import (
 	"bufio"
