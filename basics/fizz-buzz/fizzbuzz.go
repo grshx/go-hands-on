@@ -1,4 +1,4 @@
-package fizzbuzz
+package main
 
 import (
 	"fmt"
@@ -27,6 +27,7 @@ func FizzBuzz() {
 
 	}
 	fmt.Println("the program took ", time.Since(start))
+
 }
 
 func main() {
